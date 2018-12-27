@@ -1,0 +1,24 @@
+body {
+  background: #C1C1C0;
+}
+
+.main-content {
+  max-width: 800px;
+}
+.main-content .jumbotron {
+  background: #E6E6E5;
+}
+
+.btn-primary {
+  background: #005900;
+  border-color: #005900;
+}
+.btn-primary:hover {
+  background: #ff8c00;
+  border-color: #ff8c00;
+}
+
+a, a:hover {
+  color: #005900;
+  text-decoration: underline;
+}

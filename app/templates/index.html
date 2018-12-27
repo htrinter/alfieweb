@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Alfie Web</title>
+
+    <link rel="stylesheet" href="/static/css/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/main.css">
+  </head>
+  <body>
+    <div class="container main-content">
+      <div class="jumbotron mt-3">
+        <h1 class="h4"><strong>Alfie</strong> creates diary inserts in various formats and layouts.</h1>
+
+        {% from "_formhelpers.html" import render_choice_row %}
+        <form method="POST" action="/" class="mt-5" target="_blank">
+          {{ form.csrf_token }}
+          {{ render_choice_row(form.format) }}
+          {{ render_choice_row(form.layout) }}
+          {{ render_choice_row(form.language) }}
+          {{ render_choice_row(form.year) }}
+          <!--{-{ render_choice_row(form.frontmatter) }-}-->
+          <!--{-{ render_choice_row(form.backmatter) }-}-->
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label"></label>
+            <button type="submit" class="btn btn-primary form-control col-sm-9">{{ form.submit.label }}</button>
+          </div
+        </form>
+
+        <hr class="mt-5 mb-5">
+
+        <p><strong>About</strong></p>
+        <p>
+          Alfie is a Python script that generates LaTeX files and compiles them with XeTeX.
+          The script was made by <a href="">Joakim Hertze</a> and turned into a web app by <a href="">Hagen Trinter</a>. Alfie is <a href="">available on GitHub</a>.
+          The web app is built with Python, Flask, Bootstrap and Docker. The source code is also <a href="">available on GitHub</a>.
+        </p>
+
+        <hr class="mt-5 mb-5">
+
+        <p><small>Some legal matters required by German and European law: <a href="">Impressum</a>, <a href="">Datenschutz</a></small></p>
+      </div>
+    </div>
+
+    <script src="/static/js/lib/jquery-3.3.1.slim.min.js"></script>
+    <script src="/static/js/lib/popper.min.js"></script>
+    <script src="/static/js/lib/bootstrap.min.js"></script>
+  </body>
+</html>

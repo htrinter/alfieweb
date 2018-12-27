@@ -1,0 +1,5 @@
+**/__pycache__
+**/*.pyc
+app/generated-files/cache/*
+app/generated-files/tmp/*
+venv
