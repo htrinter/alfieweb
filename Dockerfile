@@ -12,6 +12,8 @@ RUN venv/bin/pip install -r requirements.txt
 RUN venv/bin/pip install gunicorn
 
 COPY app app
+RUN mkdir -p app/generated-files/tmp/
+RUN mkdir -p app/generated-files/cache/
 COPY gunicorn-config.py ./
 COPY boot.sh ./
 RUN chmod +x boot.sh
@@ -29,5 +31,5 @@ ENV FLASK_APP alfieweb.py
 RUN chown -R alfieweb:alfieweb ./
 USER alfieweb
 
-EXPOSE 5000
+EXPOSE 50001
 ENTRYPOINT ["./boot.sh"]
