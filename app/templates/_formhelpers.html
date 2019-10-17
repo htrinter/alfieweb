@@ -5,7 +5,7 @@
     </label>
     <select name={{ field.name }} id="choice-{{ field.name }}" class="form-control col-sm-9">
       {% for choice in field.choices %}
-        <option value="{{ choice[0] }}">{{ choice[1] }}</option>
+        <option value="{{ choice[0] }}"{% if choice[2] %} selected="selected"{% endif %}>{{ choice[1] }}</option>
       {% endfor %}
     </select>
   </div>
