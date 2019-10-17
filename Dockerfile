@@ -31,5 +31,5 @@ ENV FLASK_APP alfieweb.py
 RUN chown -R alfieweb:alfieweb ./
 USER alfieweb
 
-EXPOSE 50001
+EXPOSE 5000
 ENTRYPOINT ["./boot.sh"]
