@@ -20,6 +20,7 @@ RUN venv/bin/pip install -r requirements.txt
 RUN venv/bin/pip install gunicorn
 
 COPY app app
+RUN key=$(openssl rand -base64 32) && sed -i "s|key-replaced-on-docker-build|$key|g" app/alfieweb.py
 RUN mkdir -p app/generated-files/tmp/
 RUN mkdir -p app/generated-files/cache/
 COPY gunicorn-config.py ./
