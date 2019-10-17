@@ -3,3 +3,6 @@
 app/generated-files/cache/*
 app/generated-files/tmp/*
 venv
+
+/.idea
+/*.iml
