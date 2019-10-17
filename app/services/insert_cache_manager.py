@@ -20,4 +20,4 @@ def copy_to_cache(source_file_path, cache_file_name):
     return cache_file_path
 
 def get_cache_dir_path():
-    return CACHE_DIR_PATH;
+    return CACHE_DIR_PATH
