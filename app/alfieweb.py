@@ -1,7 +1,7 @@
-#from app import app
+import os
 import flask
 
 app = flask.Flask(__name__)
-app.config['SECRET_KEY'] = 'change-this-key'
+app.config['SECRET_KEY'] = os.urandom(24)
 
 from routes import index
