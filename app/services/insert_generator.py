@@ -12,7 +12,7 @@ def generate_file(format, layout, language, year):
 
     alfie_arg = "{}-{}-{}-{}-no-no-yes".format(format, layout, language, year)
     alfie_pdf_file_name = "diary-{}-{}-{}.pdf".format(format, year, language)
-    subprocess.run(["python3", "alfie.py", alfie_arg], cwd=generation_directory, timeout=10)
+    subprocess.run(["python3", "alfie.py", alfie_arg], cwd=generation_directory, timeout=20)
 
     cache_file_name = get_cache_file_name(format, layout, year, language)
     cache_file_path = copy_to_cache(generation_directory + "/" + alfie_pdf_file_name, cache_file_name)
