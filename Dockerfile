@@ -1,4 +1,4 @@
-FROM python:3.7.1-stretch
+FROM python:3.9.13-bullseye
 
 RUN useradd alfieweb
 WORKDIR /home/alfieweb
@@ -17,7 +17,7 @@ RUN fc-cache -f -v
 COPY requirements.txt requirements.txt
 RUN python -m venv venv
 RUN venv/bin/pip install -r requirements.txt
-RUN venv/bin/pip install gunicorn
+RUN venv/bin/pip install gunicorn==20.1.0
 
 COPY app app
 RUN key=$(openssl rand -base64 32) && sed -i "s|key-replaced-on-docker-build|$key|g" app/alfieweb.py
